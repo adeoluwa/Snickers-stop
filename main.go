@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	// "github.com/adeoluwa/gocommerce/controllers"
+	"github.com/adeoluwa/gocommerce/controllers"
 	"github.com/adeoluwa/gocommerce/database"
 	"github.com/adeoluwa/gocommerce/middleware"
 	"github.com/adeoluwa/gocommerce/routes"
