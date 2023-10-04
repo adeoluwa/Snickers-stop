@@ -99,7 +99,7 @@ func SignUp() gin.HandlerFunc {
 		user.Updated_At, _ = time.Parse(time.RFC3339, time.Now().Format(time.RFC3339))
 		user.ID = primitive.NewObjectID()
 		user.User_ID = user.ID.Hex()
-		token, refreshtoken,_ :=  generate.TokenGenerator(*user.Email, *user.First_Name, *user.Last_Name, user.User_ID)
+		token, refreshtoken,_ :=  generate.TokenGenerator(*user.Email, *user.First_Name, *user.Last_Name, user.User_ID, *user.Delivery_Address)
 		user.Token = &token
 		user.Refresh_Token = &refreshtoken
 		user.UserCart = make([]models.ProductUser, 0)
@@ -147,7 +147,7 @@ func Login() gin.HandlerFunc {
 			return
 		}
 
-		token,refreshToken, _ := generate.TokenGenerator(*founduser.Email, *founduser.First_Name, *founduser.Last_Name, founduser.User_ID)
+		token,refreshToken, _ := generate.TokenGenerator(*founduser.Email, *founduser.First_Name, *founduser.Last_Name, *founduser.Delivery_Address, founduser.User_ID)
 
 		defer cancel()
 

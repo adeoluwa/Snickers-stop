@@ -11,10 +11,6 @@ import (
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
-	// "go.mongodb.org/mongo-driver/mongo/address"
-
-	// "go.mongodb.org/mongo-driver/internal"
-	// "golang.org/x/net/context"
 )
 
 
@@ -78,8 +74,6 @@ func AddAdresses() gin.HandlerFunc{
 		defer cancel()
 		ctx.Done() 
 	}
-
-
 }
 
 func EditHomeAddress() gin.HandlerFunc{
